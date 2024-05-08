@@ -30,6 +30,7 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     # DEBUG = True
     DEBUG = values.BooleanValue(True)
+    AUTH_USER_MODEL = "blango_auth.User"
 
     LOGGING = {
         "version": 1,
@@ -127,11 +128,14 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        "blango_auth",
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
         "debug_toolbar",
     ]
+    AUTH_USER_MODEL = "blango_auth.User"
+
 
     MIDDLEWARE = [
         "debug_toolbar.middleware.DebugToolbarMiddleware",
